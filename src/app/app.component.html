@@ -1,21 +1,126 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<nz-layout>
+  <nz-sider style="overflow: auto; height: 100vh; position: fixed; left: 0" nzTheme="light">
+    <div class="logo"></div>
+    <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'">
+      <li nz-submenu [nzOpen]="true">
+        <span title><i nz-icon type="appstore"></i>KT Global</span>
+        <ul>
+          <li nz-submenu [nzOpen]="true">
+            <span title>MENA North</span>
+            <ul>
+              <li nz-menu-item (click)="onClick('ksa')">KSA</li>
+              <li nz-menu-item (click)="onClick('bahrain')">Bahrain</li>
+            </ul>
+          </li>
+          <li nz-submenu [nzOpen]="true">
+            <span title>EAK</span>
+            <ul>
+              <li nz-menu-item>Kuwait</li>
+              <li nz-menu-item>India</li>
+              <li nz-menu-item>KSA</li>
+            </ul>
+          </li>
+          <li nz-submenu [nzOpen]="true">
+            <span title>WEST</span>
+            <ul>
+              <li nz-menu-item>USA</li>
+              <li nz-menu-item>UK</li>
+              <li nz-menu-item>Option 3</li>
+              <li nz-menu-item>Option 4</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout style="margin-left: 200px">
+    <nz-header style="background: white; padding:0;">
+      <div nz-row nzType="flex" nzJustify="end">
+        <div nz-col nzSpan="1"><i nz-icon nzType="plus-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
+        <div nz-col nzSpan="1"><i nz-icon nzType="bell" nzTheme="outline" style="font-size: 20px;"></i></div>
+        <div nz-col nzSpan="1"><i nz-icon nzType="exclamation-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
+        <div nz-col nzSpan="1"><i nz-icon nzType="question-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
+        <div nz-col nzSpan="3">
+          <nz-avatar nzIcon="user" [nzSize]="40"></nz-avatar>
+          <nz-dropdown style="margin-left: 1rem;">
+            <a nz-dropdown>John Doe<i nz-icon type="down"></i></a>
+            <ul nz-menu>
+              <li nz-menu-item>
+                <a>1st menu item</a>
+              </li>
+              <li nz-menu-item>
+                <a>2nd menu item</a>
+              </li>
+              <li nz-menu-divider></li>
+              <li nz-menu-item nzDisabled>3rd menu item（disabled）</li>
+            </ul>
+          </nz-dropdown>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content style="margin:24px 16px 0;overflow: initial">
+      <div style="padding: 20px;background: #fff;">
+        <!-- Breadcrumb -->
+        <div nz-row>
+          <div nz-col nzSpan="24" style="margin: 10px; padding: 10px;">
+            <nz-breadcrumb>
+              <nz-breadcrumb-item>
+                Reports
+              </nz-breadcrumb-item>
+              <nz-breadcrumb-item>
+                <a style="color: rgb(48, 151, 247);">Project Governance</a>
+              </nz-breadcrumb-item>
+            </nz-breadcrumb>
+          </div>
+        </div>
+        <nz-divider></nz-divider>
+        <!-- Cards -->
+        <!-- <div nz-row nzType="flex" nzJustify="space-around">
+          <div nz-col nzSpan="4">
+            <nz-card class="kpicard">
+              <nz-statistic [nzValue]="26 | number" [nzTitle]="'Total lumpsum projects'"></nz-statistic>
+            </nz-card>
+          </div>
+          <div nz-col nzSpan="4">
+            <nz-card class="kpicard">
+              <nz-statistic [nzValue]="03 | number" [nzTitle]="'Cost over-run projects'"></nz-statistic>
+            </nz-card>
+          </div>
+          <div nz-col nzSpan="4">
+            <nz-card class="kpicard">
+              <nz-statistic [nzValue]="04 | number" [nzTitle]="'Schedule deviated projects'"></nz-statistic>
+            </nz-card>
+          </div>
+          <div nz-col nzSpan="4">
+            <nz-card class="kpicard">
+              <nz-statistic [nzValue]="03 | number" [nzTitle]="'Resource overloaded PJs'"></nz-statistic>
+            </nz-card>
+          </div>
+          <div nz-col nzSpan="4">
+            <nz-card class="kpicard">
+              <nz-statistic [nzValue]="02 | number" [nzTitle]="'C-Sat deviated projects'"></nz-statistic>
+            </nz-card>
+          </div>
+        </div> -->
+        <!-- Dynamic List Widget-->
+        <div nz-row nzType="flex" nzJustify="space-between" style="margin-left: 12px;">
+          <div nz-col nzSpan="6">
+            <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="solid">
+              <label nz-radio-button nzValue="A" (click)="navigateTo('screen1')">Summary</label>
+              <label nz-radio-button nzValue="B" (click)="navigateTo('screen2')" style="margin-left: 1rem;">View Resource Utilization</label>
+            </nz-radio-group>
+          </div>
+          <div nz-col nzSpan="3">
+            <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
+            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon nzType="align-center" nzTheme="outline"></i></button>
+            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon nzType="ellipsis" nzTheme="outline"></i></button>
+          </div>
+        </div>
+        <div nz-row style="margin-top: 20px;">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </nz-content>
+    <!-- <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer> -->
+  </nz-layout>
+</nz-layout>

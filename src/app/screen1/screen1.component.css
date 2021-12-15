@@ -1,0 +1,6 @@
+:host gridster {
+  background-color: white;
+  display: flex;
+  min-height: 860px;
+  flex-direction: column;
+}

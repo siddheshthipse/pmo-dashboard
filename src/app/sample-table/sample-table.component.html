@@ -1,0 +1,29 @@
+<nz-divider nzText={{tableTitle}} nzOrientation="left"></nz-divider>
+<nz-table #sampleTable [nzData]="tableData" [nzSize]="'small'" [nzPageSize]="pageSize" style="padding-left: 22px; padding-right: 22px;"
+[nzScroll]="{ x: '500px' }" [nzWidthConfig]="widthConfig">
+  <thead>
+    <tr>
+      <th *ngFor="let content of tableColumns; let i = index">{{content}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of sampleTable.data let i = index">
+      
+      <td *ngFor="let objKey of _object.keys(row); let j = index">
+
+        <div [ngSwitch]="fieldTypes[j]">
+          <div *ngSwitchCase="'text'">
+            {{ row[objKey] }}
+          </div>
+          <div *ngSwitchCase="'rating'">
+            <nz-rate [ngModel]="_json.parse(row[objKey])" nzDisabled></nz-rate>
+          </div>
+          <div *ngSwitchCase="'progressbar'">
+            <nz-progress [nzPercent]="row[objKey]"></nz-progress>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

@@ -1,0 +1,29 @@
+<div style="margin-top: 0.2rem;padding: 2rem;">
+  <nz-divider nzText="Resource Utilization" nzOrientation="left"></nz-divider>
+  <nz-table #basicTable [nzData]="tableData" nzBordered>
+    <thead>
+      <tr>
+        <th *ngFor="let content of tableColumns; let i = index">{{content}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of basicTable.data let i = index">
+        <td *ngFor="let objKey of _object.keys(row); let j = index">
+
+          <div [ngSwitch]="fieldTypes[j]">
+            <div *ngSwitchCase="'text'">
+              {{ row[objKey] }}
+            </div>
+            <div *ngSwitchCase="'rating'">
+              <nz-rate [ngModel]="_json.parse(row[objKey])" nzDisabled></nz-rate>
+            </div>
+            <div *ngSwitchCase="'progressbar'">
+              <nz-progress [nzPercent]="row[objKey]"></nz-progress>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

@@ -1,0 +1,96 @@
+[
+  {
+    "componentType": "SampleCardComponent",
+    "cols": 1,
+    "rows": 1,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Total lumpsum projects",
+      "isTable": false,
+      "tableColumns": null,
+      "fieldTypes": null,
+      "widgetData": 88
+    }
+  },
+  {
+    "componentType": "StaticTableComponent",
+    "cols": 4,
+    "rows": 5,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Major Table",
+      "isTable": true,
+      "tableColumns": [
+        "Project",
+        "Completion",
+        "Project Health",
+        "Planned Date",
+        "Expected Date",
+        "Status",
+        "Planned Hours",
+        "Expected Hours",
+        "Status"
+      ],
+      "fieldTypes": ["text", "progressbar", "text", "text", "text","text","text","text","text"],
+      "widgetData": [
+        {
+          "projectName": "Jabber implementation",
+          "completion": 30,
+          "projectHealth": "Effort got deviated by 12%",
+          "plannedDate": "23-Sept-2021",
+          "expectedDate": "25-Nov-2021",
+          "scheduleComment": "65 days behind the schedule",
+          "plannedHours": "480",
+          "expectedHours": "320",
+          "effortComment": "12% deviated"
+        },
+        {
+          "projectName": "Bostom SAP implementation",
+          "completion": 80,
+          "projectHealth": "All good!",
+          "plannedDate": "23-Sept-2021",
+          "expectedDate": "25-Nov-2021",
+          "scheduleComment": "5 days ahead the schedule",
+          "plannedHours": "480",
+          "expectedHours": "320",
+          "effortComment": "12% less than planned"
+        },
+        {
+          "projectName": "Campor T&M MEAN",
+          "completion": 80,
+          "projectHealth": "All good!",
+          "plannedDate": "23-Sept-2021",
+          "expectedDate": "01-Sept-2021",
+          "scheduleComment": "23 days ahead the schedule",
+          "plannedHours": "480",
+          "expectedHours": "320",
+          "effortComment": "12% less than planned"
+        },
+        {
+          "projectName": "ELM",
+          "completion": 25,
+          "projectHealth": "All good!",
+          "plannedDate": "15-Nov-2021",
+          "expectedDate": "01-Dec-2021",
+          "scheduleComment": "15 days behind the schedule",
+          "plannedHours": "480",
+          "expectedHours": "320",
+          "effortComment": "As per the plan"
+        },
+        {
+          "projectName": "RAK PSD",
+          "completion": 80,
+          "projectHealth": "All good!",
+          "plannedDate": "17-Nov-2021",
+          "expectedDate": "01-Dec-2021",
+          "scheduleComment": "14 days behind the schedule",
+          "plannedHours": "480",
+          "expectedHours": "320",
+          "effortComment": "As per the plan"
+        }
+      ]
+    }
+  }
+]

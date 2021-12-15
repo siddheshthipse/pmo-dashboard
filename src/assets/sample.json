@@ -1,0 +1,270 @@
+[
+  {
+    "componentType": "SampleCardComponent",
+    "cols": 1,
+    "rows": 1,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Total lumpsum projects",
+      "isTable": false,
+      "tableColumns": null,
+      "fieldTypes": null,
+      "widgetData": 26
+    }
+  },
+  {
+    "componentType": "SampleCardComponent",
+    "cols": 1,
+    "rows": 1,
+    "x": 1,
+    "y": 0,
+    "data": {
+      "title": "Total lumpsum projects",
+      "isTable": false,
+      "tableColumns": null,
+      "fieldTypes": null,
+      "widgetData": 26
+    }
+  },
+  {
+    "componentType": "SampleCardComponent",
+    "cols": 1,
+    "rows": 1,
+    "x": 2,
+    "y": 0,
+    "data": {
+      "title": "Total lumpsum projects",
+      "isTable": false,
+      "tableColumns": null,
+      "fieldTypes": null,
+      "widgetData": 26
+    }
+  },
+  {
+    "componentType": "SampleCardComponent",
+    "cols": 1,
+    "rows": 1,
+    "x": 3,
+    "y": 0,
+    "data": {
+      "title": "Total lumpsum projects",
+      "isTable": false,
+      "tableColumns": null,
+      "fieldTypes": null,
+      "widgetData": 26
+    }
+  },
+  {
+    "componentType": "SampleTableComponent",
+    "cols": 2,
+    "rows": 3,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Delayed Projects",
+      "isTable": true,
+      "tableColumns": [
+        "Outcome",
+        "Company Name",
+        "Planned Date",
+        "Expected Date"
+      ],
+      "fieldTypes": [
+        "text",
+        "text",
+        "text",
+        "text",
+        "text"
+      ],
+      "widgetData": [
+        {
+          "outcome": "16 days",
+          "name": "SIDF",
+          "firstcol": "05-Jun-21",
+          "secondcol": "21-Jun-21"
+        },
+        {
+          "outcome": "65 days",
+          "name": "JIGPC Assessment",
+          "firstcol": "19-Aug-21",
+          "secondcol": "21-Oct-21"
+        },
+        {
+          "outcome": "25 days",
+          "name": "Qatar Solar Technologies",
+          "firstcol": "05-Jun-21",
+          "secondcol": "21-Jun-21"
+        },
+        {
+          "outcome": "25 days",
+          "name": "SOLB Steel Implementation",
+          "firstcol": "01-Nov-21",
+          "secondcol": "26-Nov-21"
+        },
+        {
+          "outcome": "16 days",
+          "name": "Omnicron Technologies",
+          "firstcol": "14-May-21",
+          "secondcol": "31-May-21"
+        },
+        {
+          "outcome": "23 days",
+          "name": "KYB Suspensions",
+          "firstcol": "05-Jun-21",
+          "secondcol": "28-Jun-21"
+        }
+      ]
+    }
+  },
+  {
+    "componentType": "SampleTableComponent",
+    "cols": 2,
+    "rows": 3,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "C-SAT compromised projects",
+      "isTable": true,
+      "tableColumns": [
+        "Outcome",
+        "Company Name",
+        "Rating",
+        "Consequence"
+      ],
+      "fieldTypes": [
+        "text",
+        "text",
+        "rating",
+        "text"
+      ],
+      "widgetData": [
+        {
+          "outcome": "16 days",
+          "name": "SIDF",
+          "firstcol": "3",
+          "secondcol": "Scored below 3 star twice"
+        },
+        {
+          "outcome": "65 days",
+          "name": "JIGPC Assessment",
+          "firstcol": "2",
+          "secondcol": "Scored below 2 star thrice"
+        },
+        {
+          "outcome": "25 days",
+          "name": "Qatar Solar Technologies",
+          "firstcol": "4",
+          "secondcol": "Scored above 3 star once"
+        },
+        {
+          "outcome": "25 days",
+          "name": "SOLB Steel Implementation",
+          "firstcol": "2",
+          "secondcol": "Scored below 3 star once"
+        },
+        {
+          "outcome": "16 days",
+          "name": "Omnicron Technologies",
+          "firstcol": "5",
+          "secondcol": "Gave 5 star rating thrice"
+        },
+        {
+          "outcome": "23 days",
+          "name": "KYB Suspensions",
+          "firstcol": "2",
+          "secondcol": "Gave below 3 star rating once"
+        }
+      ]
+    }
+  },
+  {
+    "componentType": "SampleTableComponent",
+    "cols": 2,
+    "rows": 3,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Delayed Projects",
+      "isTable": true,
+      "tableColumns": [
+        "Outcome",
+        "Company Name",
+        "Planned Date",
+        "Expected Date"
+      ],
+      "fieldTypes": [
+        "text",
+        "text",
+        "text",
+        "text",
+        "text"
+      ],
+      "widgetData": [
+        
+      ]
+    }
+  },
+  {
+    "componentType": "SampleTableComponent",
+    "cols": 2,
+    "rows": 3,
+    "x": 0,
+    "y": 0,
+    "data": {
+      "title": "Delayed Projects",
+      "isTable": true,
+      "tableColumns": [
+        "Outcome",
+        "Company Name",
+        "Planned Date",
+        "Expected Date"
+      ],
+      "fieldTypes": [
+        "text",
+        "text",
+        "text",
+        "text",
+        "text"
+      ],
+      "widgetData": [
+        {
+          "outcome": "16 days",
+          "name": "SIDF",
+          "firstcol": "05-Jun-21",
+          "secondcol": "21-Jun-21"
+        },
+        {
+          "outcome": "65 days",
+          "name": "JIGPC Assessment",
+          "firstcol": "19-Aug-21",
+          "secondcol": "21-Oct-21"
+        },
+        {
+          "outcome": "25 days",
+          "name": "Qatar Solar Technologies",
+          "firstcol": "05-Jun-21",
+          "secondcol": "21-Jun-21"
+        },
+        {
+          "outcome": "25 days",
+          "name": "SOLB Steel Implementation",
+          "firstcol": "01-Nov-21",
+          "secondcol": "26-Nov-21"
+        },
+        {
+          "outcome": "16 days",
+          "name": "Omnicron Technologies",
+          "firstcol": "14-May-21",
+          "secondcol": "31-May-21"
+        },
+        {
+          "outcome": "23 days",
+          "name": "KYB Suspensions",
+          "firstcol": "05-Jun-21",
+          "secondcol": "28-Jun-21"
+        }
+      ]
+    }
+  }
+]

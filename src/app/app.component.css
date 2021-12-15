@@ -1,0 +1,9 @@
+.logo {
+  height: 32px;
+  background: rgb(48, 151, 247);
+  margin: 16px;
+}
+
+.kpicard:hover {
+  box-shadow: 6px 6px 5px grey;
+}
