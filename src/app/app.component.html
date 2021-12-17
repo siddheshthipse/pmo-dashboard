@@ -43,16 +43,22 @@
         <div nz-col nzSpan="3">
           <nz-avatar nzIcon="user" [nzSize]="40"></nz-avatar>
           <nz-dropdown style="margin-left: 1rem;">
-            <a nz-dropdown>John Doe<i nz-icon type="down"></i></a>
+            <a nz-dropdown>John Doe<i nz-icon type="down" style="margin-left: 7px;"></i></a>
             <ul nz-menu>
               <li nz-menu-item>
-                <a>1st menu item</a>
+                <i nz-icon nzType="setting" nzTheme="outline"></i>User Settings
               </li>
               <li nz-menu-item>
-                <a>2nd menu item</a>
+                <i nz-icon nzType="project" nzTheme="outline"></i>Project Settings
+              </li>
+              <li nz-menu-item>
+                <i nz-icon nzType="check-circle" nzTheme="outline"></i>Subscriptions
+              </li>
+              <li nz-menu-item>
+                <i nz-icon nzType="smile" nzTheme="outline"></i>Feedback
               </li>
               <li nz-menu-divider></li>
-              <li nz-menu-item nzDisabled>3rd menu item（disabled）</li>
+              <li nz-menu-item><i nz-icon nzType="logout" nzTheme="outline"></i>Logout</li>
             </ul>
           </nz-dropdown>
         </div>
@@ -62,13 +68,13 @@
       <div style="padding: 20px;background: #fff;">
         <!-- Breadcrumb -->
         <div nz-row>
-          <div nz-col nzSpan="24" style="margin: 10px; padding: 10px;">
+          <div nz-col nzSpan="24" style="margin: 10px; padding: 0px;">
             <nz-breadcrumb>
               <nz-breadcrumb-item>
                 Reports
               </nz-breadcrumb-item>
               <nz-breadcrumb-item>
-                <a style="color: rgb(48, 151, 247);">Project Governance</a>
+                <a style="color: #e13f00">Project Governance</a>
               </nz-breadcrumb-item>
             </nz-breadcrumb>
           </div>

@@ -1,22 +1,8 @@
-<!-- <button nz-button nzType="primary" (click)="addItem()">Add Item</button> -->
+<!-- <button nz-button nzType="primary" (click)="dummyRequest()">Add Item</button> -->
+
+
 <gridster [options]="options">
-  <!-- <gridster-item *ngFor="let item of cardlayout" [item]="item">
-    <ndc-dynamic [ndcDynamicComponent]="item.componentType" [ndcDynamicInputs]="{ data: item.data }">
-    </ndc-dynamic>
-  </gridster-item> -->
-
   <gridster-item *ngFor="let item of layout" [item]="item">
-    <ndc-dynamic [ndcDynamicComponent]="item.componentType" [ndcDynamicInputs]="{ data: item.data }">
-    </ndc-dynamic>
-    <!-- <button
-        (click)="deleteItem(item)"
-      >
-        Delete Item
-      </button> -->
-    <!-- <app-sample-table></app-sample-table> -->
-    <!-- Component Factory Logic goes here -->
-    <!-- <div #container></div> -->
-
-    <!-- ng-dynamic-component logic -->
+      <app-dynamic-content [componentName]="item.componentType" [data]="item.data"></app-dynamic-content>
   </gridster-item>
 </gridster>

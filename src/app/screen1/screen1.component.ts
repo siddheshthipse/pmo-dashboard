@@ -13,6 +13,7 @@ import { SampleCardComponent } from "../sample-card/sample-card.component";
 import { StaticTableComponent } from "../static-table/static-table.component";
 import { ActivatedRoute } from "@angular/router";
 import { PieChartComponent } from "../pie-chart/pie-chart.component";
+import { WidgetModel } from "../models/componentdata.interface";
 
 @Component({
   selector: "app-screen1",
@@ -35,48 +36,63 @@ export class Screen1Component implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
-      console.log(params);
+    this.route.queryParams.subscribe(async (params) => {
+      // console.log(params);
       this.region = params.region;
 
       if (this.region == undefined || this.region == "") {
         this.region = "ktglobal";
       }
 
-      this._du.getScreen1(this.region).subscribe((returnData: any[]) => {
-        this.layout = [];
+      this._du.getScreen1(this.region).subscribe((returnData: any) => {
         console.log(returnData);
-        this.resolver(returnData);
+        this.layout=returnData;
       });
+
+      // const widgetData= await this._du.getDashboardWidgets().toPromise();
+      // console.log(widgetData);
+
+      // const someData=await this._du.getWidgetData(widgetData);
+      // console.log(someData);
+      // this.layout=someData;
     });
     //service call to get jsonArray and then call the resolver
   }
 
-  resolver(incomingJsonArray: any[]) {
-    incomingJsonArray.forEach((element) => {
-      switch (element.componentType) {
-        case "SampleCardComponent":
-          element.componentType = SampleCardComponent;
-          this.layout.push(element);
-          break;
-        case "SampleTableComponent":
-          element.componentType = SampleTableComponent;
-          this.layout.push(element);
-          break;
-        case "StaticTableComponent":
-          element.componentType = StaticTableComponent;
-          this.layout.push(element);
-          break;
-        case "PieChartComponent":
-          element.componentType = PieChartComponent;
-          this.layout.push(element);
-          break;
-        default:
-          break;
-      }
-    });
-  }
+  // resolver(incomingJsonArray: WidgetModel[]) {
+  //   this.layout=[];
 
+  //   console.log('Incoming json array')
+  //   console.log(incomingJsonArray);
+
+  //   incomingJsonArray.forEach((element) => {
+  //     switch (element.componentType) {
+  //       case "SampleCardComponent":
+  //         element.componentType = SampleCardComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       case "SampleTableComponent":
+  //         element.componentType = SampleTableComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       case "StaticTableComponent":
+  //         element.componentType = StaticTableComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       case "PieChartComponent":
+  //         element.componentType = PieChartComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
+
+  //   console.log('Gridster Layout');
+  //   console.log(this.layout);
+  // }
+
+  
   // addItem() {
   //   this._du.addItem();
   // }

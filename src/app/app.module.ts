@@ -25,6 +25,7 @@ import { SampleCardComponent } from './sample-card/sample-card.component';
 import { Screen2Component } from './screen2/screen2.component';
 import { Card2Component } from './card2/card2.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { DynamicContentComponent } from './dynamic-content/dynamic-content.component';
 
 registerLocaleData(en);
 
@@ -44,7 +45,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     SampleCardComponent,
     Screen2Component,
     Card2Component,
-    PieChartComponent
+    PieChartComponent,
+    DynamicContentComponent
   ],
   imports: [
     BrowserModule,

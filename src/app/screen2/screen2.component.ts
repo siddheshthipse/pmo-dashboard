@@ -17,28 +17,28 @@ export class Screen2Component implements OnInit {
 
   ngOnInit() {
     this._du.getScreen2('screen2').subscribe((returnData:any[])=>{
-      this.resolver(returnData);
+      this.layout=returnData;
     })
   }
 
-  resolver(incomingJsonArray: any[]) {
-    incomingJsonArray.forEach((element) => {
-      switch (element.componentType) {
-        case "SampleCardComponent":
-          element.componentType = SampleCardComponent;
-          this.layout.push(element);
-          break;
-        case "SampleTableComponent":
-          element.componentType = SampleTableComponent;
-          this.layout.push(element);
-          break;
-        case "StaticTableComponent":
-          element.componentType = StaticTableComponent;
-          this.layout.push(element);
-          break;
-        default:
-          break;
-      }
-    });
-  }
+  // resolver(incomingJsonArray: any[]) {
+  //   incomingJsonArray.forEach((element) => {
+  //     switch (element.componentType) {
+  //       case "SampleCardComponent":
+  //         element.componentType = SampleCardComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       case "SampleTableComponent":
+  //         element.componentType = SampleTableComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       case "StaticTableComponent":
+  //         element.componentType = StaticTableComponent;
+  //         this.layout.push(element);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
+  // }
 }

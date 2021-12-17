@@ -12,7 +12,7 @@
       <td *ngFor="let objKey of _object.keys(row); let j = index">
 
         <div [ngSwitch]="fieldTypes[j]">
-          <div *ngSwitchCase="'text'">
+          <div *ngSwitchCase="'text'" [ngStyle]="{'color': colorScheme[i][objKey] }">
             {{ row[objKey] }}
           </div>
           <div *ngSwitchCase="'rating'">
@@ -27,3 +27,5 @@
     </tr>
   </tbody>
 </nz-table>
+
+<!-- [ngStyle]="{'color': colorScheme[i][objKey] }" -->
