@@ -20,7 +20,7 @@ export class DesignutilityService {
     gridType: GridType.Fixed,
     fixedColWidth: 320,
     fixedRowHeight: 111,
-    displayGrid: DisplayGrid.OnDragAndResize,
+    displayGrid: DisplayGrid.Always,
     setGridSize: true,
     pushItems: false,
     swap: true,
@@ -37,7 +37,7 @@ export class DesignutilityService {
   constructor(private http: HttpClient) {}
 
   getScreen1(region: string) {
-    return this.http.get<WidgetModel[]>(`http://localhost:8000/${region}`);
+    return this.http.get(`http://localhost:8000/${region}`);
   }
 
   getScreen2(region: string) {

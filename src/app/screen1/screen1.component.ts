@@ -26,7 +26,7 @@ export class Screen1Component implements OnInit {
 
   options = this._du.options;
   layout: GridsterItem[] = [];
-  region: string;
+  params: string;
 
   // component: any;
 
@@ -37,14 +37,14 @@ export class Screen1Component implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(async (params) => {
-      // console.log(params);
-      this.region = params.region;
+      console.log(params);
+      this.params = params.groupBy;
 
-      if (this.region == undefined || this.region == "") {
-        this.region = "ktglobal";
+      if (this.params == undefined || this.params == "") {
+        this.params = "ktglobal";
       }
 
-      this._du.getScreen1(this.region).subscribe((returnData: any) => {
+      this._du.getScreen1(this.params).subscribe((returnData: any) => {
         console.log(returnData);
         this.layout=returnData;
       });

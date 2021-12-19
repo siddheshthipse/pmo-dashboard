@@ -2,35 +2,32 @@
   <nz-sider style="overflow: auto; height: 100vh; position: fixed; left: 0" nzTheme="light">
     <div class="logo"></div>
     <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'">
-      <li nz-submenu [nzOpen]="true">
-        <span title><i nz-icon type="appstore"></i>KT Global</span>
+      <!-- <li nz-submenu [nzOpen]="true">
+        <span title><i nz-icon nzType="user" nzTheme="outline"></i>Users</span>
         <ul>
-          <li nz-submenu [nzOpen]="true">
-            <span title>MENA North</span>
-            <ul>
-              <li nz-menu-item (click)="onClick('ksa')">KSA</li>
-              <li nz-menu-item (click)="onClick('bahrain')">Bahrain</li>
-            </ul>
-          </li>
-          <li nz-submenu [nzOpen]="true">
-            <span title>EAK</span>
-            <ul>
-              <li nz-menu-item>Kuwait</li>
-              <li nz-menu-item>India</li>
-              <li nz-menu-item>KSA</li>
-            </ul>
-          </li>
-          <li nz-submenu [nzOpen]="true">
-            <span title>WEST</span>
-            <ul>
-              <li nz-menu-item>USA</li>
-              <li nz-menu-item>UK</li>
-              <li nz-menu-item>Option 3</li>
-              <li nz-menu-item>Option 4</li>
-            </ul>
-          </li>
+          <li nz-menu-item (click)="onClick('9922636854')">Siddhesh Thipse</li>
+          <li nz-menu-item>John Samuel</li>
+          <li nz-menu-item>Gokulnath S</li>
         </ul>
       </li>
+      <li nz-submenu [nzOpen]="true">
+        <span title><i nz-icon nzType="global" nzTheme="outline"></i>Countries</span>
+        <ul>
+          <li nz-menu-item (click)="onClick('911234')">India</li>
+          <li nz-menu-item>USA</li>
+          <li nz-menu-item>UK</li>
+        </ul>
+      </li> -->
+      <li nz-menu-item (click)="navigateTo('screen1')"><i nz-icon nzType="appstore" nzTheme="outline"></i>Dashboard</li>
+      <div *ngFor="let contents of sidenavData">
+        <li nz-submenu nzOpen="{{contents.collapse}}">
+          <span title><i nz-icon nzType={{contents.icon}} nzTheme={{contents.icontheme}}></i>{{contents.title}}</span>
+          <ul *ngFor="let item of contents.data">
+            <li nz-menu-item (click)="onClick(item.value)">{{item.placeholder}}</li>
+          </ul>
+        </li>
+      </div>
+
     </ul>
   </nz-sider>
   <nz-layout style="margin-left: 200px">
@@ -38,10 +35,11 @@
       <div nz-row nzType="flex" nzJustify="end">
         <div nz-col nzSpan="1"><i nz-icon nzType="plus-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
         <div nz-col nzSpan="1"><i nz-icon nzType="bell" nzTheme="outline" style="font-size: 20px;"></i></div>
-        <div nz-col nzSpan="1"><i nz-icon nzType="exclamation-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
+        <div nz-col nzSpan="1"><i nz-icon nzType="exclamation-circle" nzTheme="outline" style="font-size: 20px;"></i>
+        </div>
         <div nz-col nzSpan="1"><i nz-icon nzType="question-circle" nzTheme="outline" style="font-size: 20px;"></i></div>
         <div nz-col nzSpan="3">
-          <nz-avatar nzIcon="user" [nzSize]="40"></nz-avatar>
+          <nz-avatar nzText="JD" [nzSize]="40"></nz-avatar>
           <nz-dropdown style="margin-left: 1rem;">
             <a nz-dropdown>John Doe<i nz-icon type="down" style="margin-left: 7px;"></i></a>
             <ul nz-menu>
@@ -80,46 +78,20 @@
           </div>
         </div>
         <nz-divider></nz-divider>
-        <!-- Cards -->
-        <!-- <div nz-row nzType="flex" nzJustify="space-around">
-          <div nz-col nzSpan="4">
-            <nz-card class="kpicard">
-              <nz-statistic [nzValue]="26 | number" [nzTitle]="'Total lumpsum projects'"></nz-statistic>
-            </nz-card>
-          </div>
-          <div nz-col nzSpan="4">
-            <nz-card class="kpicard">
-              <nz-statistic [nzValue]="03 | number" [nzTitle]="'Cost over-run projects'"></nz-statistic>
-            </nz-card>
-          </div>
-          <div nz-col nzSpan="4">
-            <nz-card class="kpicard">
-              <nz-statistic [nzValue]="04 | number" [nzTitle]="'Schedule deviated projects'"></nz-statistic>
-            </nz-card>
-          </div>
-          <div nz-col nzSpan="4">
-            <nz-card class="kpicard">
-              <nz-statistic [nzValue]="03 | number" [nzTitle]="'Resource overloaded PJs'"></nz-statistic>
-            </nz-card>
-          </div>
-          <div nz-col nzSpan="4">
-            <nz-card class="kpicard">
-              <nz-statistic [nzValue]="02 | number" [nzTitle]="'C-Sat deviated projects'"></nz-statistic>
-            </nz-card>
-          </div>
-        </div> -->
-        <!-- Dynamic List Widget-->
         <div nz-row nzType="flex" nzJustify="space-between" style="margin-left: 12px;">
           <div nz-col nzSpan="6">
             <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="solid">
               <label nz-radio-button nzValue="A" (click)="navigateTo('screen1')">Summary</label>
-              <label nz-radio-button nzValue="B" (click)="navigateTo('screen2')" style="margin-left: 1rem;">View Resource Utilization</label>
+              <label nz-radio-button nzValue="B" (click)="navigateTo('screen2')" style="margin-left: 1rem;">View
+                Resource Utilization</label>
             </nz-radio-group>
           </div>
           <div nz-col nzSpan="3">
             <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
-            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon nzType="align-center" nzTheme="outline"></i></button>
-            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon nzType="ellipsis" nzTheme="outline"></i></button>
+            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon
+                nzType="align-center" nzTheme="outline"></i></button>
+            <button nz-button nzType="default" nzShape="circle" style="margin-left: 1rem;"><i nz-icon nzType="ellipsis"
+                nzTheme="outline"></i></button>
           </div>
         </div>
         <div nz-row style="margin-top: 20px;">
@@ -127,6 +99,5 @@
         </div>
       </div>
     </nz-content>
-    <!-- <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer> -->
   </nz-layout>
 </nz-layout>

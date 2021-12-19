@@ -12,7 +12,7 @@ export class SampleTableComponent implements OnInit {
   tableData:any[];
   fieldTypes:any[];
   widthConfig:any[];
-  colorScheme:any[];
+  // colorScheme:any[];
   isEmpty:boolean=false;
   // widthConfig=['100px','100px','100px','100px'];
 
@@ -31,7 +31,7 @@ export class SampleTableComponent implements OnInit {
     this.tableColumns=this.data.tableColumns;
     this.fieldTypes=this.data.fieldTypes;
     this.widthConfig=this.data.widthConfig;
-    this.colorScheme=this.data.colorScheme;
+    // this.colorScheme=this.data.colorScheme;
 
     console.log(this.fieldTypes);
 

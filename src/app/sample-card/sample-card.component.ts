@@ -9,7 +9,7 @@ export class SampleCardComponent implements OnInit {
 
   cardTitle:any;
   cardData:any;
-  colorScheme:any[];
+  // colorScheme:any[];
   constructor() { }
 
   @Input() data:any;
@@ -18,7 +18,7 @@ export class SampleCardComponent implements OnInit {
 
     this.cardTitle=this.data.title;
     this.cardData=this.data.widgetData;
-    this.colorScheme=this.data.colorScheme;
+    // this.colorScheme=this.data.colorScheme;
   }
 
 }
