@@ -21,17 +21,17 @@ export class DynamicContentComponent implements OnInit {
     let componentRef:any;
 
     switch (this.componentName) {
-      case "SampleCardComponent":
+      case "card":
         componentFactory = this.resolver.resolveComponentFactory(SampleCardComponent);
         componentRef=this.container.createComponent(componentFactory);
         componentRef.instance.data=this.data;
       break;
-      case "SampleTableComponent":
+      case "table":
         componentFactory= this.resolver.resolveComponentFactory(SampleTableComponent);
         componentRef=this.container.createComponent(componentFactory);
         componentRef.instance.data=this.data;
       break;
-      case "PieChartComponent":
+      case "pie":
         componentFactory= this.resolver.resolveComponentFactory(PieChartComponent);
         componentRef=this.container.createComponent(componentFactory);
         componentRef.instance.data=this.data;

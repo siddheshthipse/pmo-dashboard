@@ -37,6 +37,7 @@ export class DesignutilityService {
   constructor(private http: HttpClient) {}
 
   getScreen1(region: string) {
+    region="ktglobal";
     return this.http.get(`http://localhost:8000/${region}`);
   }
 
@@ -44,34 +45,53 @@ export class DesignutilityService {
     return this.http.get(`http://localhost:8000/${region}`);
   }
 
+  getSideNavigation(){
+    return this.http.post(`${this.apiEndpoint}/sidebar`,{workplace: {dbname: "ktern"}});
+  }
+
   getDashboardWidgets() {
     const dashboardID = "61b867c0bff3e58a391a6ba6";
 
     return this.http
-      .post<{ msg: string; data: WidgetModel[] }>(`${this.apiEndpoint}/dashboard/${dashboardID}`, {
+      .post<{ msg: string; data:{widgets:any[]} }>(`${this.apiEndpoint}/dashboard/${dashboardID}`, {
         workplace: {
           dbname: "ktern",
         },
       })
   }
 
-  async getWidgetData(widgetInfo: { msg: string; data: WidgetModel[] }) {
+  async getWidgetData(widgetInfo: { msg: string; data:{widgets:any[]} }, filterCondition:string) {
     const dashboardWidgetArray: any[]=[];
+    let body;
+
+    console.log('FILTER ConDIOTION')
+    console.log(filterCondition);
+    if(filterCondition==undefined || filterCondition==""){
+      body={workplace: {dbname: "ktern"}};
+    }else{
+      body={
+        workplace: {
+            dbname: "ktern"
+        },
+        query: {
+            field: "assignedTo",
+            operator: "=",
+            value: filterCondition
+        }
+    }
+    }
 
     // console.log(widgetInfo.data.length);
-    widgetInfo.data.forEach(async (element) => {
-      const someData:any=await this.http.post(`${this.apiEndpoint}/run/${element}`, {workplace: {dbname: "ktern",},user: {userId: "5f1861f101a0882b7c168a6d",}}).toPromise();
+    widgetInfo.data.widgets.forEach(async (element) => {
+      const someData:any=await this.http.post(`${this.apiEndpoint}/widget/${element}`, body).toPromise();
       console.log(someData.data);
       dashboardWidgetArray.push(someData.data);
     });
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 6000));
     
     console.log(dashboardWidgetArray);
     return dashboardWidgetArray;
-    // setTimeout(() => {
-    //   console.log(dashboardWidgetArray);
-    // }, 300);
   }
 
   // addItem() {

@@ -2,34 +2,18 @@
   <nz-sider style="overflow: auto; height: 100vh; position: fixed; left: 0" nzTheme="light">
     <div class="logo"></div>
     <ul nz-menu [nzTheme]="'light'" [nzMode]="'inline'">
-      <!-- <li nz-submenu [nzOpen]="true">
-        <span title><i nz-icon nzType="user" nzTheme="outline"></i>Users</span>
-        <ul>
-          <li nz-menu-item (click)="onClick('9922636854')">Siddhesh Thipse</li>
-          <li nz-menu-item>John Samuel</li>
-          <li nz-menu-item>Gokulnath S</li>
-        </ul>
-      </li>
-      <li nz-submenu [nzOpen]="true">
-        <span title><i nz-icon nzType="global" nzTheme="outline"></i>Countries</span>
-        <ul>
-          <li nz-menu-item (click)="onClick('911234')">India</li>
-          <li nz-menu-item>USA</li>
-          <li nz-menu-item>UK</li>
-        </ul>
-      </li> -->
-      <li nz-menu-item (click)="navigateTo('screen1')"><i nz-icon nzType="appstore" nzTheme="outline"></i>Dashboard</li>
+      <li nz-menu-item (click)="navigateTo('screen1')" nzMatchRouter nzSelected><i nz-icon nzType="appstore" nzTheme="outline"></i>Dashboard</li>
       <div *ngFor="let contents of sidenavData">
         <li nz-submenu nzOpen="{{contents.collapse}}">
           <span title><i nz-icon nzType={{contents.icon}} nzTheme={{contents.icontheme}}></i>{{contents.title}}</span>
           <ul *ngFor="let item of contents.data">
-            <li nz-menu-item (click)="onClick(item.value)">{{item.placeholder}}</li>
+            <li nz-menu-item (click)="onClick(item._id)">{{item.fullName}}</li>
           </ul>
         </li>
       </div>
-
     </ul>
   </nz-sider>
+
   <nz-layout style="margin-left: 200px">
     <nz-header style="background: white; padding:0;">
       <div nz-row nzType="flex" nzJustify="end">

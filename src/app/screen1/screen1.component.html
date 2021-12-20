@@ -1,8 +1,7 @@
-<!-- <button nz-button nzType="primary" (click)="dummyRequest()">Add Item</button> -->
-
-
-<gridster [options]="options">
-  <gridster-item *ngFor="let item of layout" [item]="item">
+<nz-spin [nzSpinning]="isSpinning">
+  <gridster [options]="options">
+    <gridster-item *ngFor="let item of layout" [item]="item">
       <app-dynamic-content [componentName]="item.componentType" [data]="item.data"></app-dynamic-content>
-  </gridster-item>
-</gridster>
+    </gridster-item>
+  </gridster>
+</nz-spin>

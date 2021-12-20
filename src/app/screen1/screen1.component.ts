@@ -1,19 +1,10 @@
 import {
   Component,
-  ComponentFactoryResolver,
-  Input,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
+  OnInit
 } from "@angular/core";
 import { DesignutilityService } from "../designutility.service";
-import { SampleTableComponent } from "./../sample-table/sample-table.component";
 import { GridsterItem } from "angular-gridster2";
-import { SampleCardComponent } from "../sample-card/sample-card.component";
-import { StaticTableComponent } from "../static-table/static-table.component";
 import { ActivatedRoute } from "@angular/router";
-import { PieChartComponent } from "../pie-chart/pie-chart.component";
-import { WidgetModel } from "../models/componentdata.interface";
 
 @Component({
   selector: "app-screen1",
@@ -21,14 +12,13 @@ import { WidgetModel } from "../models/componentdata.interface";
   styleUrls: ["./screen1.component.css"],
 })
 export class Screen1Component implements OnInit {
-  // @ViewChild("container", { read: ViewContainerRef })
-  // container: ViewContainerRef;
 
   options = this._du.options;
   layout: GridsterItem[] = [];
   params: string;
+  isSpinning:boolean;
 
-  // component: any;
+  
 
   constructor(
     private _du: DesignutilityService,
@@ -37,24 +27,26 @@ export class Screen1Component implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(async (params) => {
-      console.log(params);
+      this.isSpinning=true;
+
       this.params = params.groupBy;
+      console.log('Params ARE')
+      console.log(this.params);
 
-      if (this.params == undefined || this.params == "") {
-        this.params = "ktglobal";
-      }
+      // this._du.getScreen1(this.params).subscribe((returnData: any) => {
+      //   console.log(returnData);
+      //   this.layout=returnData;
+      // });
 
-      this._du.getScreen1(this.params).subscribe((returnData: any) => {
-        console.log(returnData);
-        this.layout=returnData;
-      });
+      const widgetData= await this._du.getDashboardWidgets().toPromise();
+      console.log('widgetData');
+      console.log(widgetData.data.widgets);
 
-      // const widgetData= await this._du.getDashboardWidgets().toPromise();
-      // console.log(widgetData);
-
-      // const someData=await this._du.getWidgetData(widgetData);
-      // console.log(someData);
-      // this.layout=someData;
+      const someData=await this._du.getWidgetData(widgetData, this.params);
+      console.log('someData');
+      console.log(someData);
+      this.layout=someData;
+      this.isSpinning=false;
     });
     //service call to get jsonArray and then call the resolver
   }
