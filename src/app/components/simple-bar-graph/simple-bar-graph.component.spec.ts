@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThirdTableComponent } from './third-table.component';
+import { SimpleBarGraphComponent } from './simple-bar-graph.component';
 
-describe('ThirdTableComponent', () => {
-  let component: ThirdTableComponent;
-  let fixture: ComponentFixture<ThirdTableComponent>;
+describe('SimpleBarGraphComponent', () => {
+  let component: SimpleBarGraphComponent;
+  let fixture: ComponentFixture<SimpleBarGraphComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThirdTableComponent ]
+      declarations: [ SimpleBarGraphComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThirdTableComponent);
+    fixture = TestBed.createComponent(SimpleBarGraphComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

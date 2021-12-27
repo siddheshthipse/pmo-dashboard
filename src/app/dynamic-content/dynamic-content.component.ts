@@ -1,8 +1,12 @@
 import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { PieChartComponent } from '../pie-chart/pie-chart.component';
-import { SampleCardComponent } from '../sample-card/sample-card.component';
-import { SampleTableComponent } from '../sample-table/sample-table.component';
-import { StaticTableComponent } from '../static-table/static-table.component';
+import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-chart.component';
+import { PieChartComponent } from '../components/pie-chart/pie-chart.component';
+import { SampleCardComponent } from '../components/sample-card/sample-card.component';
+import { SampleTableComponent } from '../components/sample-table/sample-table.component';
+import { SimpleBarGraphComponent } from '../components/simple-bar-graph/simple-bar-graph.component';
+import { StackedAreaChartComponent } from '../components/stacked-area-chart/stacked-area-chart.component';
+import { StaticTableComponent } from '../components/static-table/static-table.component';
+import { DoubleBarGraphComponent } from '../components/double-bar-graph/double-bar-graph.component';
 
 @Component({
   selector: 'app-dynamic-content',
@@ -36,8 +40,28 @@ export class DynamicContentComponent implements OnInit {
         componentRef=this.container.createComponent(componentFactory);
         componentRef.instance.data=this.data;
       break;
-      case "StaticTableComponent":
+      case "bigtable":
         componentFactory= this.resolver.resolveComponentFactory(StaticTableComponent);
+        componentRef=this.container.createComponent(componentFactory);
+        componentRef.instance.data=this.data;
+      break;
+      case "doughnut":
+        componentFactory= this.resolver.resolveComponentFactory(DoughnutChartComponent);
+        componentRef=this.container.createComponent(componentFactory);
+        componentRef.instance.data=this.data;
+      break;
+      case "stackedarea":
+        componentFactory= this.resolver.resolveComponentFactory(StackedAreaChartComponent);
+        componentRef=this.container.createComponent(componentFactory);
+        componentRef.instance.data=this.data;
+      break;
+      case "simplebar":
+        componentFactory= this.resolver.resolveComponentFactory(SimpleBarGraphComponent);
+        componentRef=this.container.createComponent(componentFactory);
+        componentRef.instance.data=this.data;
+      break;
+      case "doublebar":
+        componentFactory= this.resolver.resolveComponentFactory(DoubleBarGraphComponent);
         componentRef=this.container.createComponent(componentFactory);
         componentRef.instance.data=this.data;
       break;

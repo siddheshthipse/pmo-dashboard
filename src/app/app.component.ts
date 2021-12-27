@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DesignutilityService } from './designutility.service';
+import { DesignutilityService } from './services/designutility.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,9 +17,9 @@ export class AppComponent implements OnInit{
   constructor(private _du:DesignutilityService, private router:Router) { }
 
   async ngOnInit() {
-    const someValue:any= await this._du.getSideNavigation().toPromise();
-    console.log(someValue.data);
-    this.sidenavData=someValue.data;
+    // const someValue:any= await this._du.getSideNavigation().toPromise();
+    // console.log(someValue.data);
+    // this.sidenavData=someValue.data;
   }
 
   onClick(value:string){

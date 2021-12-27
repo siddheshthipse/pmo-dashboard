@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Card2Component } from './card2.component';
+import { DoubleBarGraphComponent } from './double-bar-graph.component';
 
-describe('Card2Component', () => {
-  let component: Card2Component;
-  let fixture: ComponentFixture<Card2Component>;
+describe('DoubleBarGraphComponent', () => {
+  let component: DoubleBarGraphComponent;
+  let fixture: ComponentFixture<DoubleBarGraphComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Card2Component ]
+      declarations: [ DoubleBarGraphComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Card2Component);
+    fixture = TestBed.createComponent(DoubleBarGraphComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

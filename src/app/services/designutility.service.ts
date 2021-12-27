@@ -7,7 +7,7 @@ import {
   GridType,
 } from "angular-gridster2";
 import { UUID } from "angular2-uuid";
-import { WidgetModel } from "./models/componentdata.interface";
+import { WidgetModel } from "../models/componentdata.interface";
 import { Observable, from, of } from "rxjs";
 
 @Injectable({

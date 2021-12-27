@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { GridsterItem } from "angular-gridster2";
-import { DesignutilityService } from "../designutility.service";
-import { SampleCardComponent } from "../sample-card/sample-card.component";
-import { SampleTableComponent } from "../sample-table/sample-table.component";
-import { StaticTableComponent } from "../static-table/static-table.component";
+import { DesignutilityService } from "../services/designutility.service";
+import { SampleCardComponent } from "../components/sample-card/sample-card.component";
+import { SampleTableComponent } from "../components/sample-table/sample-table.component";
+import { StaticTableComponent } from "../components/static-table/static-table.component";
 
 @Component({
   selector: "app-screen2",

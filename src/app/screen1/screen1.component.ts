@@ -2,7 +2,7 @@ import {
   Component,
   OnInit
 } from "@angular/core";
-import { DesignutilityService } from "../designutility.service";
+import { DesignutilityService } from "../services/designutility.service";
 import { GridsterItem } from "angular-gridster2";
 import { ActivatedRoute } from "@angular/router";
 
@@ -33,19 +33,19 @@ export class Screen1Component implements OnInit {
       console.log('Params ARE')
       console.log(this.params);
 
-      // this._du.getScreen1(this.params).subscribe((returnData: any) => {
-      //   console.log(returnData);
-      //   this.layout=returnData;
-      // });
+      this._du.getScreen1(this.params).subscribe((returnData: any) => {
+        console.log(returnData);
+        this.layout=returnData;
+      });
 
-      const widgetData= await this._du.getDashboardWidgets().toPromise();
-      console.log('widgetData');
-      console.log(widgetData.data.widgets);
+      // const widgetData= await this._du.getDashboardWidgets().toPromise();
+      // console.log('widgetData');
+      // console.log(widgetData.data.widgets);
 
-      const someData=await this._du.getWidgetData(widgetData, this.params);
-      console.log('someData');
-      console.log(someData);
-      this.layout=someData;
+      // const someData=await this._du.getWidgetData(widgetData, this.params);
+      // console.log('someData');
+      // console.log(someData);
+      // this.layout=someData;
       this.isSpinning=false;
     });
     //service call to get jsonArray and then call the resolver
